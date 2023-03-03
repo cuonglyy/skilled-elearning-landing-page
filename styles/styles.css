@@ -1,0 +1,145 @@
+:root {
+    /* COLORS */
+    --light-dark-blue: hsl(234, 25%, 52%);
+    --very-dark-blue: hsl(233, 54%, 16%);
+    --light-gray: hsl(232, 10%, 56%);
+    --bright-pink: hsl(341, 92%, 62%);
+    --light-pink: hsl(341, 100%, 83%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Gradients */
+        /* For btn 2 */
+    --orange-to-pink: linear-gradient(hsl(322, 87%, 55%), hsl(13, 100%, 64%));
+    --blue-to-pink: linear-gradient(hsl(237, 100%, 64%), hsl(322, 87%, 55%));
+
+    --nav-footer-vertical-padding: 2.4rem;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* 1rem = 10px */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: linear-gradient(hsl(0, 0%, 100%), hsla(234, 100%, 97%, 1));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+/*
+    ================ DESKTOP DESIGN ================
+*/
+
+
+/*
+    ========== NAV STYLING ==========
+*/
+#nav,
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: var(--nav-footer-vertical-padding) 16.5rem;
+}
+
+#nav {
+    border: 1px solid red;
+}
+
+.logo {
+    font-size: 3.6rem;
+    font-weight: 800;
+}
+
+/*
+    ========== MAIN CONTENT STYLING ==========
+*/
+
+#container {
+    /* 
+        This might cause problems later regarding responsiveness.
+        It was used to make sure that the footer stayed at the bottom of the page.
+        Change if needed.
+    */
+    min-height: calc(100vh - 5rem); 
+    border: 1px solid blue;
+    width: 100%; /* Remove this when all styling is finished*/
+    padding: 0 16.5rem;
+}
+
+/*
+    ====== INTRO STYLING ======
+*/
+
+#intro {
+    position: relative;
+}
+
+.intro-left {
+    margin-top: calc(18.5rem - var(--nav-footer-vertical-padding));
+    width: 45.7rem;
+}
+
+.header {
+    font-size: 5.6rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.intro-content {
+    width: 44.4rem;
+    margin: 2.9rem 0 4rem;
+}
+
+
+/*
+    ========== BUTTON STYLING ==========
+*/
+
+.btn {
+    padding: 1.8rem 3.2rem;
+    border-radius: 2.8rem;
+    border: transparent;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn__nav {
+    background-color: var(--very-dark-blue);
+}
+
+.btn__intro {
+    background: var(--orange-to-pink);
+}
+
+.btn__footer {
+    background: var(--blue-to-pink);
+}
+
+
+/*
+    ========== FOOTER STYLING ==========
+*/
+
+#footer {
+    background-color: var(--very-dark-blue);
+}
+
+.logo__footer {
+    color: white;
+}
