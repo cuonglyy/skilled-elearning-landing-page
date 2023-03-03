@@ -38,6 +38,10 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+}
+
 /*
     ================ DESKTOP DESIGN ================
 */
@@ -85,6 +89,10 @@ body {
     ====== INTRO STYLING ======
 */
 
+#intro {
+    margin-bottom: 25rem;
+}
+
 .intro-left {
     margin-top: calc(18.5rem - var(--nav-footer-vertical-padding));
     width: 45.7rem;
@@ -115,12 +123,9 @@ body {
 */
 
 #courses {
-    margin-top: 25rem;
     display: grid;
-    grid-template:
-    "course course course" repeat(3, 1fr)
-    "course course course" repeat(3, 1fr)
-
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .course__header {
@@ -132,7 +137,7 @@ body {
 }
 
 .course {
-    grid-area: course;
+    border: 1px solid brown;
 }
 
 /*
@@ -146,7 +151,6 @@ body {
 }
 
 .btn a {
-    text-decoration: none;
     color: white;
 }
 
