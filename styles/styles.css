@@ -127,6 +127,7 @@ a {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
     gap: 8rem 3rem;
+    margin-bottom: 14rem;
 }
 
 .course__header {
@@ -150,7 +151,8 @@ a {
 }
 
 .course:not(.course__header) {
-    box-shadow: 0 2.5rem 5rem rgba(6, 22, 141, 0.05);
+    background-color: var(--white);
+    box-shadow: 0 2.5rem 5rem rgba(6, 22, 141, 0.04);
 }
 
 .course__header {
@@ -175,6 +177,7 @@ a {
 .course__link {
     font-weight: 700;
     margin-top: auto;
+    color: var(--bright-pink);
 }
 
 /*
@@ -185,6 +188,7 @@ a {
     padding: 1.8rem 3.2rem;
     border-radius: 2.8rem;
     border: transparent;
+    cursor: pointer;
 }
 
 .btn a {
@@ -195,12 +199,24 @@ a {
     background-color: var(--very-dark-blue);
 }
 
+.btn__nav:hover {
+    background-color: var(--light-dark-blue);
+}
+
 .btn__intro {
     background: var(--orange-to-pink);
 }
 
+.btn__intro:hover {
+    opacity: 0.5;
+}
+
 .btn__footer {
     background: var(--blue-to-pink);
+}
+
+.btn__footer:hover {
+    background: var(--white), var(--blue-to-pink);
 }
 
 
