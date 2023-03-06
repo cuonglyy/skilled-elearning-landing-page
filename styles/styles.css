@@ -59,10 +59,6 @@ a {
     padding: var(--nav-footer-vertical-padding) 16.5rem;
 }
 
-#nav {
-    border: 1px solid red;
-}
-
 .logo {
     font-size: 3.6rem;
     font-weight: 800;
@@ -80,7 +76,6 @@ a {
         Change if needed.
     */
     min-height: calc(100vh - 5rem); 
-    border: 1px solid blue;
     width: 100%;
     padding: 0 16.5rem;
 }
@@ -216,7 +211,7 @@ a {
 }
 
 .btn__footer:hover {
-    background: var(--white), var(--blue-to-pink);
+    box-shadow: 0 0 10rem 10rem inset hsla(0, 0%, 100%, 0.45);
 }
 
 
