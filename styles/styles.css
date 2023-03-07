@@ -12,7 +12,12 @@
     --orange-to-pink: linear-gradient(hsl(13, 100%, 64%), hsl(322, 87%, 55%));
     --blue-to-pink: linear-gradient(hsl(237, 100%, 64%), hsl(322, 87%, 55%));
 
-    --nav-footer-vertical-padding: 2.4rem;
+    /* Paddings for calculation */
+    --nav-vertical-padding-desktop: 2.4rem;
+    --nav-vertical-padding-tablet: 3.1rem;
+
+    --logo-to-intro-left-desktop: 18.5rem;
+    --logo-to-intro-left-tablet: 10.5rem;
 }
 
 
@@ -43,7 +48,7 @@ a {
 }
 
 /*
-    ================ DESKTOP DESIGN ================
+    ======================= DESKTOP DESIGN =======================
 */
 
 
@@ -56,7 +61,11 @@ a {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: var(--nav-footer-vertical-padding) 16.5rem;
+}
+
+#nav {
+    border: 1px solid red;
+    padding: var(--nav-vertical-padding-desktop) 16.5rem;
 }
 
 .logo {
@@ -79,9 +88,10 @@ a {
         It was used to make sure that the footer stayed at the bottom of the page.
         Change if needed.
     */
-    min-height: calc(100vh - 5rem); 
+    min-height: calc(100vh - 12rem); 
     width: 100%;
     padding: 0 16.5rem;
+    border: 1px solid green;
 }
 
 /*
@@ -90,10 +100,11 @@ a {
 
 #intro {
     margin-bottom: 25rem;
+    border: 1px solid yellow;
 }
 
 .intro-left {
-    margin-top: calc(18.5rem - var(--nav-footer-vertical-padding));
+    margin-top: calc(var(--logo-to-intro-left-desktop) - var(--nav-vertical-padding-desktop));
     width: 45.7rem;
 }
 
@@ -105,7 +116,7 @@ a {
 
 .intro-content {
     width: 44.4rem;
-    margin: 2.9rem 0 4rem;
+    margin: 2.9rem 0 5.9rem;
     line-height: 2.8rem;
     color: var(--light-gray);
 }
@@ -132,6 +143,7 @@ a {
     grid-template-columns: repeat(3, 1fr);
     gap: 8rem 3rem;
     margin-bottom: 14rem;
+    border: 1px solid brown;
 }
 
 .course__header {
@@ -189,6 +201,7 @@ a {
 */
 
 .btn {
+    font-weight: 700;
     padding: 1.8rem 3.2rem;
     border-radius: 2.8rem;
     border: transparent;
@@ -210,7 +223,7 @@ a {
 }
 
 .btn__intro:hover {
-    opacity: 0.5;
+    box-shadow: 0 0 10rem 10rem inset hsla(0, 0%, 100%, 0.45)
 }
 
 .btn__footer {
@@ -221,26 +234,14 @@ a {
     box-shadow: 0 0 10rem 10rem inset hsla(0, 0%, 100%, 0.45);
 }
 
-
-/*
-    ================ TABLET DESIGN ================
-*/
-
-@media only screen and (max-width: 1024px) {
-    .intro__img {
-    background-image: url(../assets/image-hero-desktop.png);
-    width: 64rem;
-    height: 64rem;
-    } 
-}
-
-
 /*
     ========== FOOTER STYLING ==========
 */
 
 #footer {
     background-color: var(--very-dark-blue);
+    border: 1px solid blue;
+    padding: 3.2rem 16.5rem;
 }
 
 .logo__footer {
@@ -259,4 +260,128 @@ a {
     position: absolute;
     white-space: nowrap; 
     width: 1px;
-  }
+}
+
+
+/*
+    ======================= TABLET DESIGN =======================
+*/
+
+@media only screen and (max-width: 1024px) {
+
+    body {
+        font-size: 1.6rem;
+    }
+
+    
+    /*
+        ========== NAV STYLING ==========
+    */
+
+    #nav {
+        padding: var(--nav-vertical-padding-tablet) 4rem;
+    }
+
+    .logo {
+        font-size: 2.8rem;
+    }
+
+
+    /*
+        ========== MAIN CONTENT STYLING ==========
+    */
+
+    #container {
+        padding: 0 4rem;
+    }
+
+
+    /*
+        ====== INTRO STYLING ======
+    */
+
+    #intro {
+        margin-bottom: 21rem;
+    }
+
+    .intro-left {
+        margin-top: calc(var(--logo-to-intro-left-tablet) - var(--nav-vertical-padding-tablet));
+        width: 39.8rem;
+    }
+
+    .header {
+        font-size: 4rem;
+    }
+
+    .intro-content {
+        width: 39.8rem;
+        line-height: 2.6rem;
+        margin: 2.4rem 0 3.9rem;
+    }
+
+    .intro__img {
+        background-image: url(../assets/image-hero-tablet@2x.png);
+        width: 64rem;
+        height: 64rem;
+        top: -16rem;
+        right: -27rem;
+    }
+
+
+    /*
+        ====== COURSES STYLING ======
+    */
+    #courses {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5.6rem 1rem;
+        margin-bottom: 8.6rem;
+    }
+
+    .course__header {
+        padding: 5.6rem 3.2rem;
+    }
+
+    .header--secondary {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+    }
+
+    .course {
+        padding: 5.6rem 2.2rem 3.2rem 3.2rem;
+        gap: 1.6rem;
+    }
+
+    .course__name {
+        font-size: 2rem;
+    }
+
+    .course__content {
+        line-height: 2.6rem;
+    }
+
+    .course__link {
+        font-size: 1.8rem;
+    }
+
+
+    /*
+        ========== BUTTON STYLING ==========
+    */
+
+    .btn {
+        padding: 1.4rem 2.4rem;
+    }
+
+    .btn__intro {
+        padding: 1.8rem 3.7rem;
+    }
+
+
+    /*
+        ========== FOOTER STYLING ==========
+    */
+
+    #footer {
+        padding: 3.6rem 4rem;
+    }
+}
