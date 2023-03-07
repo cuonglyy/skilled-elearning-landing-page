@@ -64,6 +64,10 @@ a {
     font-weight: 800;
 }
 
+.logo__nav {
+    color: black;
+}
+
 /*
     ========== MAIN CONTENT STYLING ==========
 */
@@ -102,13 +106,18 @@ a {
 .intro-content {
     width: 44.4rem;
     margin: 2.9rem 0 4rem;
+    line-height: 2.8rem;
+    color: var(--light-gray);
 }
 
 .intro__img {
+    background-image: url(../assets/image-hero-desktop@2x.png);
     width: 99.1rem;
     height: 93.6rem;
+    background-position: center;
+    background-size: contain;
     position: absolute;
-    top: -23rem;
+    top: -27rem;
     right: -30.5rem;
 }
 
@@ -184,14 +193,12 @@ a {
     border-radius: 2.8rem;
     border: transparent;
     cursor: pointer;
-}
-
-.btn a {
     color: white;
 }
 
 .btn__nav {
     background-color: var(--very-dark-blue);
+    z-index: 1;
 }
 
 .btn__nav:hover {
@@ -216,6 +223,19 @@ a {
 
 
 /*
+    ================ TABLET DESIGN ================
+*/
+
+@media only screen and (max-width: 1024px) {
+    .intro__img {
+    background-image: url(../assets/image-hero-desktop.png);
+    width: 64rem;
+    height: 64rem;
+    } 
+}
+
+
+/*
     ========== FOOTER STYLING ==========
 */
 
@@ -226,3 +246,17 @@ a {
 .logo__footer {
     color: white;
 }
+
+/*
+    ======== SCREENREADER ONLY ========
+*/
+
+.sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+  }
