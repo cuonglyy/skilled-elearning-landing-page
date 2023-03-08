@@ -15,9 +15,11 @@
     /* Paddings for calculation */
     --nav-vertical-padding-desktop: 2.4rem;
     --nav-vertical-padding-tablet: 3.1rem;
+    --nav-vertical-padding-mobile: 2.2rem;
 
     --logo-to-intro-left-desktop: 18.5rem;
     --logo-to-intro-left-tablet: 10.5rem;
+    --logo-to-intro-left-mobile: 4.5rem;
 }
 
 
@@ -64,7 +66,6 @@ a {
 }
 
 #nav {
-    border: 1px solid red;
     padding: var(--nav-vertical-padding-desktop) 16.5rem;
 }
 
@@ -83,15 +84,9 @@ a {
 
 #container {
     position: relative;
-    /* 
-        This might cause problems later regarding responsiveness.
-        It was used to make sure that the footer stayed at the bottom of the page.
-        Change if needed.
-    */
     min-height: calc(100vh - 12rem); 
     width: 100%;
     padding: 0 16.5rem;
-    border: 1px solid green;
 }
 
 /*
@@ -100,7 +95,6 @@ a {
 
 #intro {
     margin-bottom: 25rem;
-    border: 1px solid yellow;
 }
 
 .intro-left {
@@ -120,6 +114,11 @@ a {
     line-height: 2.8rem;
     color: var(--light-gray);
 }
+
+/*
+    The image overlaps with `<div class="intro-left">` when the browser shrinks horizontally, any ideas on how position the image without absolute positioning
+    so the contents of `<div class="intro-left">` could shrink accordingly?
+*/
 
 .intro__img {
     background-image: url(../assets/image-hero-desktop@2x.png);
@@ -143,7 +142,6 @@ a {
     grid-template-columns: repeat(3, 1fr);
     gap: 8rem 3rem;
     margin-bottom: 14rem;
-    border: 1px solid brown;
 }
 
 .course__header {
@@ -240,7 +238,6 @@ a {
 
 #footer {
     background-color: var(--very-dark-blue);
-    border: 1px solid blue;
     padding: 3.2rem 16.5rem;
 }
 
@@ -273,7 +270,7 @@ a {
         font-size: 1.6rem;
     }
 
-    
+
     /*
         ========== NAV STYLING ==========
     */
@@ -383,5 +380,87 @@ a {
 
     #footer {
         padding: 3.6rem 4rem;
+    }
+}
+
+/*
+    ======================= MOBILE DESIGN =======================
+*/
+
+@media only screen and (max-width: 480px) {
+
+    /*
+        ========== NAV STYLING ==========
+    */
+
+    #nav {
+        padding: var(--nav-vertical-padding-mobile) 1.6rem;
+    }
+
+
+    /*
+        ========== MAIN CONTENT STYLING ==========
+    */
+
+    #container {
+        padding: 0 1.6rem;
+    }
+
+
+    /*
+        ====== INTRO STYLING ======
+    */
+
+    #intro {
+        margin-bottom: 0;
+    }
+
+    .intro-left {
+        margin-top: calc(var(--logo-to-intro-left-mobile) - var(--nav-vertical-padding-mobile));
+        width: 34.2rem;
+    }
+
+    .intro-content {
+        width: 34.3rem;
+        margin: 2.6rem 0 3.9rem;
+    }
+
+    /* 
+        `Background-size: contain` would decrease the size of the image. How would I be able to keep it's intended size and have it responsive?
+        `<div class="intro-left">`, `<p class="intro-content">`, and `<h1 ckass="header">` looks like it's width is extending on the right side,
+        is it because of the image?
+    */
+    .intro__img {
+        background-image: url(../assets/image-hero-mobile.png);
+        background-repeat: no-repeat;
+        position: static;
+        background-size: auto;
+        width: auto;
+        height: 38rem;
+        margin-top: 6.1rem;
+    }
+
+    /*
+        ====== COURSES STYLING ======
+    */
+
+    #courses {
+        grid-template-columns: 1fr;
+        grid-template-rows: 12rem repeat(5, 1fr);
+        gap: 4rem;
+        margin-bottom: 8rem;
+    }
+
+    .course__header {
+        padding: 2.4rem 2.8rem;
+    }
+
+
+    /*
+        ========== FOOTER STYLING ==========
+    */
+
+    #footer {
+        padding: 3.6rem 1.6rem;
     }
 }
